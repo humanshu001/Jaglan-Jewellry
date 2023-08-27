@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock title %}
+{% block mainimage %}
+<img src='/static/images/contactbg2.jpg' alt="">
+{% endblock mainimage %}
+{% block mainline %}
+Connect for Sparkling Gems.
+{% endblock mainline %}
+{% block body %}
+
+<div class="contactbody">
+    <div class="cnttop">
+        <h1 id="contactmainline">Connect with Jaglan Jewellers: Your Pathway to Elegance and Luxury</h1><br><br>
+
+        <p>Are you ready to embark on a journey of timeless beauty and sophistication? The team at Jaglan Jewellers is
+            here
+            to guide you through an exceptional experience, from selecting exquisite pieces to receiving personalized
+            consultations. We invite you to get in touch with us today to book an appointment and explore the world of
+            fine
+            jewellery.
+        </p><br>
+
+        <h1>Contact Information:</h1><br>
+
+        <p><strong>Visit Us:</strong><br> Jaglan Jewellers <br>
+            123 Shimmer Street,<br>
+            Diamond Plaza,<br>
+            Panipat, Haryana, India <br>
+            PIN: 132103
+        </p><br>
+        <p><strong>Call Us:</strong> 9034710039</p><br>
+        <p><strong>Email Us:</strong> contact@jaglan.com</p><br>
+        <p><strong>Working Hours:</strong> 8:00 AM - 10:00 PM</p><br>
+
+
+        <p>Indulge in an unparalleled shopping experience by booking an appointment with our expert consultants. Whether
+            you're seeking the perfect engagement ring, exploring our exclusive collections, or considering jewellery
+            services, we're here to provide dedicated assistance tailored to your needs.
+        </p><br>
+        <p>Please fill out the form below to request an appointment, and our team will get back to you promptly to
+            confirm
+            the details.
+        </p><br>
+    </div>
+    <div class="cntbottom">
+        <h1>Your Pathway to Elegance Awaits:</h1><br>
+
+        <p>At Jaglan Jewellers, we're committed to making your jewellery journey truly remarkable. From the moment you
+            step
+            into our showroom to the moment you leave adorned in brilliance, we're dedicated to exceeding your
+            expectations
+            and creating cherished memories.
+        </p><br>
+
+        <p>Contact us today and take the first step towards a world of elegance, luxury, and timeless beauty. We look
+            forward to welcoming you to the enchanting realm of Jaglan Jewellers.
+        </p><br>
+        <h1>Book an Appointment:</h1><br><br>
+    </div>
+    <div class='appointment_form'>
+        <form action="/contact" method="post">
+            {% csrf_token %}
+            <label for="name"><b>Full Name:</b></label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email"><b>Email:</b></label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone"><b>Phone:</b></label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="date"><b>Preferred Date:</b></label>
+            <input type="date" id="date" name="date" required placeholder='Date'>
+
+            <label for="message"><b>Additional Comments:</b></label>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+            <input type="submit" value="Submit" id='submit'>
+        </form>
+        <div class="formimage">
+            <img src="./static/images/formimage.png" alt="">
+        </div>
+    </div><br><br><br>
+</div>
+{% endblock body %}

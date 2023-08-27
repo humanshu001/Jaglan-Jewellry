@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}Shopping{% endblock title %}
+{% block mainimage %}
+<img src="/static/images/productbg.jpg" alt="">
+{% endblock mainimage %}
+{% block mainline %}
+Shop the No.1 Jewellery of India
+{% endblock mainline %}
+{% block body %}
+<div class="nav2">
+    <a class='a1' href="/shop">Shop /</a>
+    <a href="{% url 'home:shopproducts' category_name.slug %}">{{ category_name.name}}</a>
+</div>
+<div class="producttitle">
+    <h1>{{ category_name.name}}</h1>
+
+</div>
+<div class="bts">
+    <a href="/shop">Back to Shop</a>
+</div>
+<section class='sec3'>
+
+
+    {% for item in products %}
+    <div class="cardspro">
+        <div class="photopro">
+            <img src='{{ item.product_image.url }}'>
+        </div>
+        <div class="detailpro">
+            <div class="itemname">
+               {{ item.name }}
+            </div>
+            <div class="smalldesc">
+                {{ item.small_description}}
+            </div>
+            <div class="priava">
+                <div class="available">
+                    {% if item.quantity == 0 %}
+                    <h1 style='color: red;'>Out of Stock</h1>
+                    {% elif item.quantity == 1 %}
+                    <h1>Only One Piece left</h1>
+                    {% elif item.quantity == 2 %}
+                    <h1>Only Two Piece Left</h1>
+                    {% elif item.quantity == 3 %}
+                    <h1>Only Three Piece Left</h1>
+                    {% elif item.quantity == 4 %}
+                    <h1>Only Four Piece Left</h1>
+                    {% elif item.quantity > 4 and item.quantity < 10 %}
+                    <h1 >Only Few Piece Left</h1>
+                    {% else %}
+                    <h1>Available in Store</h1>
+                    {% endif %}
+                </div>
+                <div class="price">
+                    <div class="sellprice">
+                        <b>
+                            &#8377;
+                            {{ item.selling_price | stringformat:'d' | intcomma}}
+                        </b>
+                    </div>
+                    <div class="orgprice">
+                        &#8377;
+                        <del>
+                            {{ item.original_price | stringformat:'d' | intcomma}}
+                        </del>
+                    </div>
+                </div>
+            </div>
+            <div class="showpro">
+                <a href='{% url 'home:productdetail' cate_slug=item.category.slug pro_slug=item.slug %}'><b>Show Product</b></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</section>
+{% endblock body %}

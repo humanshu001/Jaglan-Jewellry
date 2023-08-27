@@ -1,0 +1,1068 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color:rgb(0, 0, 0) ;
+    display: flex;
+    flex-direction: column;
+    font-family: recursive;
+}
+.container{
+    background-color: rgb(0, 0, 0);
+    width: 100%; 
+}
+header{
+    background-color: black;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 85px;
+    width: 100%;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+nav ul li>a{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    padding: 10px 40px;
+    margin: 20px 30px;
+}
+.active{
+    text-decoration: underline;
+    text-decoration-color: white;
+    font-style: italic;
+    font-family: recursive;
+}
+nav ul li>a:hover{
+    background-color: rgb(26, 26, 26);
+    border-radius: 15px;
+}
+nav ul li{
+    display: inline;
+    font-family: Raleway;
+}
+nav .left{
+    width: 40px;
+}
+.fa {
+    padding: 20px;
+    font-size: 25px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    color: white;
+}
+footer{
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.icons{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.btline{
+display: flex;
+ align-items: center;
+ justify-content: center;
+ color: white;
+}            
+
+.bg{
+    position: relative;
+    width: 100%;
+}
+.bg img{
+    width: 100%;
+    opacity: 0.5;
+    animation: getVisible 2s ease 0s 1;
+    z-index: 1;
+    overflow:hidden;
+}
+.bg h1{
+    position: absolute;
+    font-family: Edwardian Script ITC;
+    position: absolute;
+    top:15%;
+    font-size: 6em;
+    left: 20%;
+    width: 280px;
+    color: #c9c9c9;
+    animation: comeFromLeft 2s ease 0s 1;
+}
+.sec2{
+    margin: 100px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(0, 0, 0);
+    background-size: cover;
+    height: 200%;
+}
+.shopbody{
+    margin: 0 20%;
+}
+.mainheading h1{
+    font-size: 400%;
+    color: white;
+    font-family: raleway;
+    width: 100%;
+}
+.cards{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cards:hover{
+    transform: scale(1.1);
+}
+.cards img{
+    width: 100%;
+}
+.cards h3{
+    color: white;
+    font-family: poppins;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 25px;
+}
+.photo{
+    display: flex;
+    justify-content: space-around;
+}
+.top{
+    margin: 30px 10px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-family: Matura MT Script Capitals;
+    font-size: 50px;
+}
+.jewellery{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    margin: 50px 0px;
+    padding: 90px 20px;
+}
+.jewellery img{
+    width: 400px;
+    padding-right: 50px;
+}
+.notes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    color: white;
+}
+.notes h1{
+    font-size: 45px;
+    font-family: raleway;
+}
+.notes p{
+    font-family: raleway;
+    font-size: 20px;
+    margin: 30px 0;
+}
+.notes a{
+    text-decoration: none;
+    font-family: raleway;
+    color: white;
+    font-size: 20px;
+    
+    border: 1px solid white;
+    width: 120px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.notes a:hover{
+    background-color: rgb(29, 29, 29);
+    transform: scale(1.1);
+}
+@keyframes getVisible {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.5;
+    }
+}
+@keyframes comeFromLeft {
+    from{
+        left:-500px;
+    }
+    to{
+        left: 20%;
+    }
+}
+.cart .button{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    border: 1px solid white;
+    padding: 13px;
+    border-radius: 9px; 
+    font-family: raleway;
+}
+.cart a{
+    margin: 2px 10px;
+}
+.cart img{
+    width: 60px;
+    filter: invert();
+    margin: 0 10px;
+}
+.cart{
+    display: flex;
+    align-items: center;
+    margin-right: -150px;
+}
+.right ul li:hover .dropdown{
+    display: block;
+    position: absolute;
+    margin-top: 11px;
+    margin-left: -15px;
+}
+.action{
+    display: none;
+    z-index: 2;
+    width: 200px;
+}
+.action ul{
+    display: flex;
+    flex-direction: column;
+}
+.if li:hover .action{
+    display: block;
+    position: absolute;
+    right: 70px;
+}
+.if li:hover .action ul li a{
+    display: block;
+}
+.dropdown:hover{
+    display: block;
+}
+.right ul li:hover .dropdown ul li{
+    display: block;
+}
+.dropdown h1{
+    color: white;
+    margin-left: 10px;
+}
+.dropdown ul li a{
+    font-size: 15px;
+}
+.dropdown{
+    display: none;
+    z-index: 2;
+    margin-left: 30px;
+    margin-top: 40px;
+    background-color: rgb(22, 22, 22);
+    padding-top: 20px;
+}
+.dropdown ul{
+    display: flex;
+    flex-direction: column;
+}
+.dropdown ul li{
+    margin-bottom: 20px;
+
+}
+.right{
+    margin-left: -70px;
+}
+.about{
+    color: white;
+    margin: 50px 15%;
+}
+.tabt{
+    margin: 50px 0;
+    margin-top: 150px;
+}
+.mabt{
+    margin: 50px 0;
+}
+.babt{
+    margin: 50px 0;
+}
+.tabt h1{
+    font-family: raleway;
+    font-size: 60px;
+}
+.tabt p{
+    font-family: raleway;
+    font-size: 25px;
+}
+.mabt h1{
+    font-family: raleway;
+    font-size: 50px;
+}
+.mabt p{
+    font-family: raleway;
+    font-size: 25px;
+}
+.babt h1{
+    font-family: raleway;
+    font-size: 50px;
+}
+.babt p{
+    font-family: raleway;
+    font-size: 25px;
+}
+.babt ul{
+    font-size: 25px;
+    font-family: raleway;
+}
+.buycont{
+    margin: 50px 0;
+}
+.buycont h1{
+    font-family: raleway;
+    font-size: 50px;
+}
+#focused{
+    font-size: 60px;
+}
+.buycont p{
+    font-family: raleway;
+    font-size: 25px;
+}
+.buy{
+    color: white;
+    margin: 50px 15%;
+    margin-top: 150px;
+}
+.contactbody{
+    color: white;
+    margin: 50px 15%;
+    font-family: raleway;
+    margin-top: 150px;
+}
+.cnttop h1{
+    font-size: 50px;
+}
+.cnttop p{
+    font-size: 25px;
+}
+.appointment_form form{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin-left: 70px;
+}
+#submit{
+    font-family: raleway;
+    font-size: 20px;
+    background-color: blue;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+}
+.appointment_form{
+    display: flex;
+
+}
+.formimage img{
+    width: 800px;
+}
+.appointment_form form input{
+    background-color: black;
+    width: 350px;
+    height: 40px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: recursive;
+    font-size: 20px;
+    margin: 10px 0;
+    margin-bottom: 25px;
+}
+.appointment_form form textarea{
+    width: 350px;
+    height: 170px;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    font-family: recursive;
+    margin: 10px 0;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.appointment_form form button:hover{
+    background-color: rgb(56, 56, 255);
+    pointer-events: none;
+}
+.appointment_form h1{
+    font-size: 50px;
+}
+.cntbottom h1{
+    font-size: 50px;
+}
+.cntbottom p{
+    font-size: 25px;
+}
+#contactmainline{
+    font-size: 60px;
+}
+.sell{
+    color: white;
+    margin: 50px 15%;
+    font-family: raleway;
+    margin-top: 150px;
+}
+.sell p{
+    font-size: 25px;
+}
+.sell h1{
+    font-size: 60px;
+}
+.sell h2{
+    font-size: 50px;
+}
+.sell ol{
+    font-size: 25px;
+}
+.insurance{
+    color: white;
+    margin: 50px 15%;
+    font-family: raleway;
+    margin-top: 150px;
+}
+.insurance p{
+    font-size: 25px;
+}
+.insurance h1{
+    font-size: 60px;
+}
+.insurance h2{
+    font-size: 50px;
+}
+.insurance ol{
+    font-size: 25px;
+}
+.exchange{
+    color: white;
+    margin: 50px 15%;
+    font-family: raleway;
+    margin-top: 150px;
+}
+.exchange p{
+    font-size: 25px;
+}
+.exchange h1{
+    font-size: 60px;
+}
+.exchange h2{
+    font-size: 50px;
+}
+.exchange ol{
+    font-size: 25px;
+}
+.goldloan{
+    color: white;
+    margin: 50px 15%;
+    font-family: raleway;
+    margin-top: 150px;
+}
+.goldloan p{
+    font-size: 25px;
+}
+.goldloan h1{
+    font-size: 60px;
+}
+.goldloan h2{
+    font-size: 50px;
+}
+.goldloan ol{
+    font-size: 25px;
+}
+.sec3{
+    margin: 10px 350px;
+    background-color: rgb(0, 0, 0);
+    height: 200%;
+}
+.producttitle h1{
+    font-size: 400%;
+    color: white;
+    font-family: raleway;
+    margin-left: 21%;
+    margin-top: 150px;
+}
+.cardspro{
+    margin: 50px;
+    display: flex;
+    background-color: rgb(20, 20, 20);
+    color: white;
+    font-family: raleway;
+    border-radius: 9px;
+}
+.detailpro{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.itemname{
+    color: white;
+    font-family: ubuntu;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+.smalldesc{
+    font-size: 20px;
+}
+.sellprice{
+    font-size: 23px;
+    font-family: recursive;
+}
+.orgprice{
+    font-family: recursive;
+}
+.price{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.priava{
+    display: flex;   
+    margin-top: 7px;
+    width: 100%;
+    justify-content: space-between;
+}
+.available{
+    display: flex;
+    align-items: flex-end;
+}
+.photopro{
+    padding: 20px;
+}
+.photopro img{
+    width: 250px;
+}
+.bts a{
+    position: fixed;
+    border: 1px solid white;
+    border-radius: 7px;
+    padding: 10px;
+    bottom: 5%;
+    right: 2.5%;
+    text-decoration: none;
+    color: white;
+    font-family: raleway;
+
+}
+.nav2{
+    width: 100%;
+    background: rgb(20, 20, 20);
+    padding: 40px 0;
+}
+.nav2 a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-family: raleway;
+}
+.nav2 .a1{
+    margin-left: 10%;
+}
+.homebody{
+    margin: 50px 5%;
+}
+.showpro a{
+    background-color: goldenrod;
+    font-family: poppins;
+    padding: 7px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+}
+.showpro a:hover{
+    background-color: rgb(233, 182, 53);
+    transform: scale(1.05);
+}
+.showpro{
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+.product{
+    margin: 5% 10%;
+    font-family: raleway;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.productimage img{
+    width: 35vw;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    margin: 0 5%;
+}
+.productname{
+    font-size: 50px;
+    font-family: ubuntu;
+    margin-bottom: 20px;
+}
+.smalldescription{
+    font-size: 25px;
+}
+.prodprice{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 30px;
+    margin: 40px 0;
+    font-family: recursive;
+}
+.originalprice{
+    font-size: 25px;
+}
+.added{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.added button{
+    background-color: goldenrod;
+    font-family: poppins;
+    text-align: center;
+    width: 70%;
+    padding: 7px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 10px 0;
+}
+.added button:active{
+    background-color: rgb(233, 182, 53);
+    transform: scale(1.05);
+}
+#addtowish{
+    background-color: rgb(255, 70, 132);
+}
+#addtowish span img{
+    width: 20px;
+}
+.increase{
+    font-size: 20px;
+    height: 40px;
+    width: 38px;
+    background-color: goldenrod;
+    font-family: poppins;
+    text-align: center;
+    border: 1px solid goldenrod;
+    
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+.decrease{
+    font-size: 20px;
+    height: 40px;
+    width: 38px;
+    background-color: goldenrod;
+    font-family: poppins;
+    text-align: center;
+    border: 1px solid goldenrod;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+.quantity{
+    font-size: 20px;
+    height: 40px;
+    width: 50px;
+    text-align: center;
+    border: 1px solid goldenrod;
+}
+.middle{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.added2{
+    background-color: goldenrod;
+    border-radius: 5px;
+    height: 42px;
+}
+.if li{
+    color: white;
+    font-size: 30px;
+}
+.user{
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    color:white;
+    font-family: raleway;
+    font-size: 35px;
+}
+.action a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.bigfoot{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(20, 20, 20);
+    color: white;
+    font-family: raleway;
+    height: 80vh;
+}
+.main{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 3%;
+}
+.mainitem a{
+    text-decoration: none;
+    color: white;
+}
+.mainitem ul{
+    list-style: none;
+}
+.mainitem ul li{
+    padding: 3px;
+}
+.mainitem button{
+    background: blue;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    width: 100px;
+}
+.mainitem textarea{
+    width: 400px;
+    height: 300px;
+    font-size: 20px;
+    font-family: recursive;
+    margin-bottom: 20px;
+}
+.mainitem{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.mainitem h1{
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.cartbody{
+    margin: 0 15%;
+    display: flex;
+    flex-direction: column;
+}
+.product_data{
+    display: flex;
+    background: rgb(20, 20, 20);
+    border-radius: 7px;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.prodimg img{
+    width: 150px;
+    height: 150px;
+}
+
+.prodname{
+    color: white;
+    font-family: raleway;
+    font-size: 20px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150%;
+}
+.status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: recursive;
+    font-size: 15px;
+    color: red;
+}
+.quantitym{
+    background-color: goldenrod;
+    border-radius: 5px;
+}
+.remove button{
+    background-color: goldenrod;
+    font-family: poppins;
+    padding: 7px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+}
+.remove{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+}
+#ciem{
+    color: white;
+    font-family: recursive;
+    font-size: 55px;
+    margin: 10%;
+    text-align: center;
+}
+#wiem{
+    text-align: center;
+}
+main{
+    margin: 50px 15%;
+    color: white;
+    font-family: raleway;
+    text-decoration: none;
+}
+main h1{
+    font-size: 60px;
+    text-align: center;
+}
+main h2{
+    font-size: 50px;
+}
+main h3{
+    font-size: 40px;
+}
+main p{
+    font-size: 25px;
+}
+main ul{
+    font-size: 25px;
+}
+main a{
+    text-decoration: none;
+    color: white;
+    font-family: recursive;
+}
+main address{
+    font-size: 25px;
+}
+
+
+.wishbody{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(0, 0, 0);
+    background-size: cover;
+    margin: 50px 15%;
+    grid-row-gap: 60px;
+}
+.wishcard{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: rgb(20, 20, 20);
+    border: 1px solid white;
+}
+.wishcard img{
+    width: 100%;
+}
+.wishcard h2{
+    font-size: 20px;
+}
+.wishcard .wishname{
+    color: white;
+    font-family: poppins;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+    height: 70px;
+}
+.delete-wishlist-item:active{
+    background: rgb(255, 98, 150);
+}
+.delete-wishlist-item{
+    background: rgb(255, 70, 132);
+    border-top: 1px solid white;
+    font-size: 20px;
+    font-family: recursive;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+.wishremove{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wishlist{
+    margin-top: 5%;
+}
+.wishlist h1{
+    font-size: 70px;
+    text-align: center;
+    color: white;
+    font-family: raleway;
+}
+.wishlist a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: rgb(20, 20, 20);
+    border: 1px solid white;
+}
+.checkout{
+    background-color: green;
+    border: 1px soiid white;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-family: recursive;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    width: 300px;
+    align-self: center;
+}
+.plorder{
+    background-color: green;
+    border: 1px soiid white;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-family: recursive;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    align-self: center;
+}
+.checkbody{
+    margin: 50px 10%;
+    font-family: recursive;
+    color: white;
+}
+.checkform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    border: 1px solid white;
+    padding: 20px;
+}
+.mainitemform{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+.checkbody form{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    font-family: recursive;
+    color: white;
+}
+
+.itemform{
+    display: flex;
+    flex-direction: column;
+}
+.itemform label{
+    margin-left: 30px;
+    font-size: 20px;
+}
+.itemform input{
+    color: white;
+    height: 40px;
+    width: 300px;
+    margin: 0 20px;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: recursive;
+    color: white;
+}
+.addressitemform textarea{
+    width: 645px;
+    height: 400px;
+    margin: 0 20px;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: recursive;
+    color: white;
+    resize: none;
+}
+.addressitemform label{
+    margin-left: 30px;
+    font-size: 20px;
+}
+.addressitemform{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.checkitems{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid white;
+    padding: 20px;
+}
+.checkform h1{
+    font-size: 40px;
+}
+.checkitems h1{
+    font-size: 40px;
+}
+.checkitems table{
+    width: 500px;
+    margin-top: 40px;
+}
+.checkitems img{
+    width: 70px;
+    height: 70px;
+    
+}
+#product_name{
+    width: 200px;
+}
+th, td{
+    padding: 5px;
+}
+.total h2{
+    display: flex;
+    justify-content:space-between;
+}

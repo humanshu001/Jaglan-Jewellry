@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="/static/images/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lumanosimo&family=Playfair+Display:ital@1&family=Poppins&family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+  </head>
+  <body>
+        <section>     
+      <div class="form">
+        <h1><b>Registration</b></h1>
+        <form method="POST" >
+          {% csrf_token %}
+          <div class="fcont">
+            <label for="username"><b>Enter your name</b></label>
+            <input type="text" name="username" id='username'>
+          </div>
+          <div class="fcont">
+            <label for="email"><b>Enter your Email Id</b></label>
+            <input type="email" name="email" id="email">
+          </div>
+          <div class="fcont">
+            <label for="password1"><b>Enter Password</b></label>
+            <input type="password" name="password1" id="password1">
+            <ul>
+              <li>Your password can't be too similar to your other personal information.</li>
+              <li>Your password must contain at least 8 characters.</li>
+              <li>Your password can't be a commonly used password.</li>
+              <li>Your password can't be entirely numeric.</li>
+            </ul>
+          </div>
+          <div class="fcont">
+            <label for="password2"><b>Confirm Password</b></label>
+            <input type="password" name="password2" id="password2">
+          </div>
+
+
+          <div class="fcont">
+            <b><p>Already have an account? <a href="/login">Log in</a></p></b>
+          </div>
+          <div class="fcont">
+            <button type="submit"><b>Sign Up</b></button>
+          </div>
+          
+        </form>
+      </div>
+      <div class="sideimage">
+        <img src="/static/images/draw1.webp">
+      </div>
+      </section>
+  </body>
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+  <script>
+    alertify.set('notifier','position', 'top-center');
+    {% for msg in messages %}
+        alertify.success('{{ msg }}');
+    {% endfor %}
+  
+
+
+    if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+  }
+  </script>
+<script>
+    
+  if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
+  }
+</script>
+</html>

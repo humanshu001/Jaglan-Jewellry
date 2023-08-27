@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+<link rel="stylesheet" href="/static/images/first.css">
+{% block title %}Jaglan Jewellers{% endblock title %}
+{% block mainimage %}
+<img src='/static/images/bg3.webp' alt="">
+{% endblock mainimage %}
+{% block mainline %}
+Welcome to Jaglan Jewellers
+{% endblock mainline %}
+{% block body %}
+<div class="homebody">
+    {% for item in category %}
+    <div class="jewellery">
+        <div class="notes">
+            <h1> {{item.name}} </h1>
+            <p> {{item.description}} </p>
+            <a href="/shop"><b>Buy Now ></b></a>
+        </div>
+        <img src="{{ item.image.url}}" alt="">
+    </div>
+    {% endfor %}
+   
+</div>
+    {% endblock body %}

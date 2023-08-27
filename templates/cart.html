@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title  %}Cart | Checkout Now{% endblock title  %}
+{% block mainimage %}
+<img src='/static/images/cartimage.png' alt="">
+{% endblock mainimage %}
+{% block mainline %}
+Checkout Now
+{% endblock mainline %}
+
+{% block body%} 
+<div class="cart_data">
+<div class="cartbody">
+    {% if cart %}
+    
+    {% for item in cart %}
+    <div class="product_data">
+        <div class="prodimg">
+            <img src="{{ item.product.product_image.url}}" alt="">
+        </div>
+        <div class="prodname">
+            {{ item.product.name}}
+        </div>
+        <div class="status">
+            <input type="hidden" class='prod_id' value='{{ item.product_id }}'>
+            {% csrf_token %}
+            {% if item.product.quantity >= item.product_qty  %}
+            <div class="quantitym">
+                <button class='decrease changeQuantity'>-</button>
+                <input type="text" name='quantity'class='quantity'value='{{ item.product_qty }}'>
+                <button class='increase changeQuantity'>+</button>
+            </div>    
+            {% else %}
+            <h1>Out of Stock</h1>    
+            {% endif %}
+        </div>
+        <div class="remove">
+            <button class="delete-cart-item">Remove</button>
+        </div>
+    </div>
+    
+    {% endfor %}
+    <a href="/checkout" class='checkout'>Checkout</a>
+    {% else %}
+    <h1 id="ciem">
+        Your Cart is Empty
+    </h1>
+    <center>
+        <img src="/static/images/emptycart.png" alt="" width="500px">
+    </center>
+    {% endif %}
+</div>
+</div>
+{% endblock body %}

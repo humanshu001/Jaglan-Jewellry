@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Your Wishlist {% endblock title%}
+
+{% block body %}
+<div class="wish_data">
+    <div class="wishlist">
+        <h1>Your Wishlist</h1>
+        {% if wishlist %}
+        <div class="wishbody">
+        {% for item in wishlist %}
+        <div class="wishcard">
+                <a href='{% url 'home:productdetail' cate_slug=item.product.category.slug pro_slug=item.product.slug %}'>
+            <input type="hidden" value='{{ item.product_id}}' class='prod_id'>
+            {% csrf_token %}
+            <div class="wishimg">
+                <img src="{{ item.product.product_image.url}}" alt="">
+            </div>
+            <div class="wishname">
+                <h2>{{ item.product.name}}</h2>
+            </div>
+            <div class="wishremove">
+                <button class='delete-wishlist-item'>Remove</button>
+            </div>
+        </a>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <h1 id="wiem">is Empty</h1>
+        {% endif %}
+</div>
+</div>
+{% endblock body %}

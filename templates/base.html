@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lumanosimo&family=Poppins&family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lumanosimo&family=Playfair+Display:ital@1&family=Poppins&family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"href="/static/images/first.css">
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
+    <!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+</head>
+
+<body>
+    <header>
+        
+        <div class="top">
+            Jaglan Jewellers
+        </div>
+        <div class='container'>
+            <nav>
+                
+                <div class="right">
+                    <ul>
+                        <li><a href="/"><b>HOME</b></a></li>
+                        <li><a href="/shop"><b>SHOP</b></a></li>
+                        <li><a href="#"><b>SERVICES</b></a>
+                            <div class="dropdown">
+                                <h1><b>OUR SERVICES :</b></h1><br>
+                                <ul>
+                                    <li><a href="/buy"><b>BUY JEWELLERY</b></a></li>
+                                    <li><a href="/sell"><b>SELL JEWELLERY</b></a></li>
+                                    <li><a href="/goldloan"><b>GOLD LOAN</b></a></li>
+                                    <li><a href="/exchange"><b>EXCHANGE JEWELLERY</b></a></li>
+                                    <li><a href="/insurance"><b>JEWELLERY INSURANCE</b></a></li>
+                                </ul> 
+                            </div>
+                        </li>
+                        <li><a href="/about"><b>ABOUT</b></a></li>
+                        <li><a href="/contact"><b>CONTACT</b></a></li>
+                    </ul>
+                </div>
+                <div class="user">
+                    <b>Welcome, {{ request.user }}</b>
+                </div>
+                <div class="cart">
+                    {% if request.user.is_authenticated %}
+                    <ul class='if'>
+                        <li><img src="/static/images/user.svg" alt="">
+                            <div class="action">
+                                <ul>
+                                    <li><a class="action1" href="/log_out"><b>Log Out</b></a></li>
+                                    <li><a class="action2" href="/profile"><b>Profile</b></a></li>
+                                </ul>
+                            
+                        </div>
+                        </li>
+                    </ul>
+                    {% else %}
+                    <a class="button" href="/login"><b>Log In</b></a>
+                    <a class="button" href="/register"><b>Sign In</b></a>
+                    {% endif %}
+                    <a href="/cart"><img src="/static/images/cart.svg" alt=""></a>
+                    <a href="/wishlist"><img src="/static/images/wishlist.svg" alt=""></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <div class="bg">
+            {% block mainimage %}{% endblock mainimage %}
+            
+                <h1>{% block mainline %}{% endblock mainline %}</h1>
+        
+        </div>
+        {% block body %}{% endblock body %}
+    </section>
+    <section class="bigfoot">
+        <div class="main">
+            <div class="mainitem">
+                <h1>Quick Links </h1>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/shop">Shop</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/cart">Cart</a></li>
+                    <li><a href="/returnpolicy">Return Policy</a></li>
+                    <li><a href="/exchangepolicy">Exchange Policy</a></li>
+                    <li><a href="/termscondition">Terms & Conditions</a></li>
+                    <li><a href="/goldloanpolicy">Gold Loan Policy</a></li>
+                    <li><a href="/sellpolicy">Sell Policy</a></li>
+                    <li><a href="/customersupport">Customer Support</a></li>
+                    <li><a href="/insurancepolicy">Insurance Policy</a></li>
+                    <li><a href="/privacypolicy">Privacy Policy</a></li>
+                    <li><a href="/buy">Buy</a></li>
+                    <li><a href="/sell">Sell</a></li>
+                    <li><a href="/exchange">Exchange</a></li>
+                    <li><a href="/insurance">Insurance</a></li>
+                    <li><a href="/goldloan">Gold Loan</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                </ul>
+            </div>
+            <div class="mainitem">
+                <h1>How to </h1>
+                <ul>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/privacypolicy">Privacy Policy</a></li>
+                    <li><a href="/buy">Buy</a></li>
+                    <li><a href="/sell">Sell</a></li>
+                    <li><a href="/exchange">Exchange</a></li>
+                    <li><a href="/insurance">Insurance</a></li>
+                    <li><a href="/goldloan">Gold Loan</a></li>
+                </ul>
+            </div>
+            <div class="mainitem">
+                <h1>Give Your Feedback Here :</h1>
+                <form action="/feedback" method='post'>
+                    {% csrf_token %}
+                    <textarea required name="feedback" id="feedback"></textarea><br>
+                    <button type="submit">Send</button>
+                </form>
+                
+            </div>
+            <div class="mainitem">
+                <h1>Policy </h1>
+                <ul>
+                    <li><a href="/returnpolicy">Return Policy</a></li>
+                    <li><a href="/exchangepolicy">Exchange Policy</a></li>
+                    <li><a href="/termsconditions">Terms & Conditions</a></li>
+                    <li><a href="/goldloanpolicy">Gold Loan Policy</a></li>
+                    <li><a href="/sellpolicy">Sell Policy</a></li>
+                    <li><a href="/customersupport">Customer Support</a></li>
+                    <li><a href="/insurancepolicy">Insurance Policy</a></li>
+                    <li><a href="/privacypolicy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="mainitem">
+                <h1>Contact </h1>
+                <ul>
+                    <li>Address: <br>
+                        Jaglan Jewellers <br>
+                        123 Shimmer Street,<br>
+                        Diamond Plaza,<br>
+                        Panipat, Haryana, India <br>
+                        PIN: 132103
+                    </li>
+                    <li>Email : <br>
+                        contact@jaglan.com</li>
+                    <li>Timing : <br>
+                        8:00 AM - 10:00 PM</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+            <div class="icons">
+                <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+                <a href="https://www.youtube.com/channel/UC4p3fhqPJD_Yr0jSFOlA_4g" class="fa fa-youtube"></a>
+                <a href="https://www.instagram.com/humanshu_jaat123/" class="fa fa-instagram"></a>
+                <a href="https://www.google.com" class="fa fa-google"></a>
+                <a href="https://www.twitter.com" class="fa fa-twitter"></a>
+            </div> 
+            <div class="btline">&#169; Copyright.All rights reserved.</div>  
+    </footer>
+</body>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script src='{% static '/js/jquery-3.7.0.min.js' %}'></script>
+<script src='/static/js/first.js'></script>
+<script>
+    alertify.set('notifier','position', 'top-center');
+    {% for msg in messages %}
+        alertify.success('{{ msg }}');
+    {% endfor %}
+  
+</script>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+<script>
+    // Get the current page's URL
+var currentPage = window.location.pathname;
+
+// Find the corresponding navigation link and add the 'active' class
+var navLinks = document.querySelectorAll('nav ul li>a');
+navLinks.forEach(function(link) {
+    if (link.getAttribute('href') === currentPage) {
+        link.parentElement.classList.add('active');
+    }
+});
+
+</script>
+{% block scripts %}
+
+{% endblock scripts %}
+
+<script src='{% static '/js/checkout.js' %}'></script>
+
+</html>

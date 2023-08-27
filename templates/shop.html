@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Shopping{% endblock title %}
+{% block mainimage %}
+<img src="/static/images/shopimage.jpg" alt="">
+{% endblock mainimage %}
+{% block mainline %}
+Shop the No.1 Jewellery of India
+{% endblock mainline %}
+{% block body %}
+<div class="nav2">
+    <a class='a1' href="/shop">Shop</a>
+</div>
+<div class="shopbody">
+<div class='mainheading'>
+<h1>Select By Category :</h1>
+</div>
+
+<div class='sec2'>
+    {% for item in category %}
+    <div class="cards">
+    <a href="{% url 'home:shopproducts' item.slug %}" style='text-decoration: none;'>
+    <div class="photo">
+        <img src='{{ item.image.url }}'> 
+    </div>
+    <br>
+    <h3>{{ item.name }}</h3>
+</a>
+</div>
+{% endfor %}
+    
+</div>
+</div>
+{% endblock body %}

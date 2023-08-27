@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}Shopping{% endblock title %}
+
+{% block body %}
+<div class="nav2">
+    <a class='a1' href="/shop">Shop /</a>
+    <a href="{% url 'home:shopproducts' products.category.slug %}">{{ products.category.name}} /</a>
+    <a href="{% url 'home:productdetail' products.category.slug products.slug %}"> {{ products.name}}</a>
+</div>
+<div class="product">
+    <div class="product_data">
+    {% csrf_token %}
+    <input type="hidden" value='{{ products.id}}' class="prod_id">
+    <div class="productimage">
+    <img src="{{ products.product_image.url }}" alt="">
+    </div>
+    <div class="details">
+        <div class="productname">
+           <b>{{ products.name }}</b>
+        </div>
+        <div class="smalldescription">
+         {{ products.small_description }}
+        </div>
+        <div class="middle">
+            <div class="added3">
+                <h1>Quantity :</h1>
+            </div>
+            <div class="added2">
+                <button class='decrease'>-</button>
+                <input type="text" class='quantity' name='quantity'value='1'>
+                <button class='increase'>+</button>
+            </div>
+        </div>
+        <hr>
+        <div class="prodprice">
+            <div class="sellingprice">
+                <b>Price:
+                    &#8377;
+                    {{ products.selling_price | stringformat:'d' | intcomma}}
+                </b>
+            </div>
+            <div class="originalprice">
+                <del>
+                    &#8377;
+                    {{ products.original_price | stringformat:'d'| intcomma }}
+                </del>
+            </div>
+        </div>
+         <div class="added">
+            <button class='addtocartbtn' >Add to Cart</button>
+            <button class='addtowishlistbtn' id="addtowish">Add to Wishlist</button>
+         </div>
+        </div>     
+   </div>
+</div>
+
+{% endblock body %}
