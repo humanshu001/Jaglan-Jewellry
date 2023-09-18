@@ -245,15 +245,16 @@ display: flex;
     display: none;
     z-index: 2;
     width: 200px;
+    margin-right: 100px;
 }
 .action ul{
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 }
 .if li:hover .action{
     display: block;
     position: absolute;
-    right: 70px;
+    right: 220px;
 }
 .if li:hover .action ul li a{
     display: block;
