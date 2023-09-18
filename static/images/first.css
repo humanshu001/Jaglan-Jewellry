@@ -245,7 +245,7 @@ display: flex;
     display: none;
     z-index: 2;
     width: 200px;
-    margin-right: 100px;
+    /* margin-right: 10px; */
 }
 .action ul{
     display: flex;
@@ -254,7 +254,7 @@ display: flex;
 .if li:hover .action{
     display: block;
     position: absolute;
-    right: 220px;
+    right: 150px;
 }
 .if li:hover .action ul li a{
     display: block;
