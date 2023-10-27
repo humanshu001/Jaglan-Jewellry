@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css"href="/static/images/first.css">
     <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static "images/favicon.webp" %}" type="image/x-icon">
     <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
     <!-- CSS -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
@@ -27,6 +28,9 @@
         
         <div class="top">
             Jaglan Jewellers
+        </div>
+        <div class="user">
+            <b>Welcome, {{ request.user }}</b>
         </div>
         <div class='container'>
             <nav>
@@ -50,9 +54,6 @@
                         <li><a href="/about"><b>ABOUT</b></a></li>
                         <li><a href="/contact"><b>CONTACT</b></a></li>
                     </ul>
-                </div>
-                <div class="user">
-                    <b>Welcome, {{ request.user }}</b>
                 </div>
                 <div class="cart">
                     {% if request.user.is_authenticated %}
@@ -190,6 +191,37 @@
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
     }
+</script>
+<script>
+    // Get the navigation bar
+    const nav = document.querySelector('nav');
+
+    // Get the initial position of the navigation bar
+    const navTop = nav.offsetTop;
+
+    // Get the "top" element
+    const topElement = document.querySelector('.top');
+
+    // Function to fix the navigation bar
+    function fixNav() {
+        if (window.scrollY > navTop) {
+            // Add the 'fixed' class to the navigation bar
+            if (topElement.style.display === 'none') {
+                document.body.style.paddingTop = (nav.offsetHeight + 80) + 'px';
+            } else {
+                document.body.style.paddingTop = nav.offsetHeight + 'px';
+            }
+            nav.classList.add('fixed');
+        } else {
+            // Remove the 'fixed' class from the navigation bar
+            document.body.style.paddingTop = 0;
+            nav.classList.remove('fixed');
+        }
+    }
+
+    // Add an event listener to the window object to call the fixNav function on scroll
+    window.addEventListener('scroll', fixNav);
+
 </script>
 <script>
     // Get the current page's URL
