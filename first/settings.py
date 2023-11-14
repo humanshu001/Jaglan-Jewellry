@@ -129,12 +129,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL= '/images/'
 
-MEDIA_ROOT= BASE_DIR / '/static'
+MEDIA_ROOT= ''
 
 # Added manually
 
 STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'static'),
+    os.path.join(BASE_DIR,'static/'),
 ]
 
 USE_THOUSAND_SEPARATOR=True
